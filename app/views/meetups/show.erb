@@ -1,0 +1,29 @@
+<h1><%=@meetup.name%></h1>
+<p><%=@meetup.description%></p>
+<p><%=@meetup.location%></p>
+<br/>
+<br/>
+
+
+<h2>Creator</h2>
+<p>
+<img src="<%=@creator.avatar_url%>" height="42" width="42">    <%=@creator.username%>
+</p>
+
+<h2>Members</h2>
+  <p>
+  <%@members.each do |member|%>
+    <img src="<%=member.avatar_url%>" height="42" width="42">    <%=member.username%><br/><br/>
+  <%end%>
+  </p>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+<form method="post" action="/meetups/<%=@meetup.id%>">
+  <label for="name">Join Meetup</label>
+  <input type="submit" style="color: black" value="submit">
+</form>
